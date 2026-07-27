@@ -128,16 +128,13 @@ body:not(body:has(section:target)) section#home{
 }
 */
 
-footer{
+footer {
     color: var(--links);
     font-size: 85%;
     padding: .25em 0;
     border-top: 1px solid var(--links);
-    margin: -5em 2.25em 2em;
+    margin: 5em 2.25em 2em;
     width: 75%;
-}
-footer a{
-    text-decoration: underline
 }
 
 h2 {
