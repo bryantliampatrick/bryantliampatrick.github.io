@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
 
+/* Accordion collapsible courtesy of W3 Schools */
+
 * { 
     margin: 0;
     padding: 0;
@@ -75,12 +77,31 @@ a {
     color: var(--links);
 }
 
+.accordion {
+    background-color: var(--sectionbg);
+    color: var(--textcolor);
+    cursor: pointer;
+    padding: 1em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 0 1em;
+    background-color: var(--sectionbg);
+    display: none;
+    overflow: hidden;
+}
+
+/* Uncomment to add anchors or nav
+
 nav a:hover {
     text-decoration-color: var(--links);
     transition: 0.2s;
 }
-
-/* Uncomment to add anchors
 
 a.inert:hover{
     text-decoration-color: transparent;
