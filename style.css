@@ -1,13 +1,13 @@
 * { 
-margin: 0;
-padding: 0;
-box-sizing: border-box;
---textcolor: black;
---pagebg: white;
---sectionbg: white;
---links: #666666;
---mono: #2F2F2F;
---monobg: #eeeeee;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --textcolor: black;
+    --pagebg: white;
+    --sectionbg: white;
+    --links: #666666;
+    --mono: #2F2F2F;
+    --monobg: #eeeeee;
 }
 
 /* Specify palette for darkmode */
@@ -32,210 +32,169 @@ html {
 }
 
 body {
-font-size: 18px;
-/* defining a font size here determines the size of an em (see "bonus") */
-font-family: "Public Sans", "Inter", sans-serif;
-/* naming multiple fonts here (and then a general category) creates a fallback where if the first one can't load or is missing a certain character, the next one (Inter) will cover for it. if none of them load then the page asks the computer for any old sans-serif font it has on hand (typically Arial on windows and San Fransisco on macOS) */
-line-height: 1.4;
-color: var(--textcolor);
-/* "color" actually refers to specifically the text color within an element. yeah i know */
-position: relative;
-margin-top: -1em;
-/* a negative margin is weird to do but I was getting a small strip of empty space at the top of the site and could not figure out why so i just accounted for it. it's okay to make websites this way! nobody looks at the code! */
-/*in this instance the computer interprets "auto" as "as much space as you have, divided evenly" which neatly centers our container on the screen*/
-width: 43em;
-/* this sets the width of the body where all the content lives, but with paragraphs constrained to their own max width it mostly just moves the navbar around */
+    font-size: 18px;
+    font-family: "Public Sans", "Inter", sans-serif;
+    line-height: 1.4;
+    color: var(--textcolor);
+    position: relative;
+    margin-top: -1em;
+    width: 43em;
 }
 
 header {
-padding: 2.5em 2em 1em 2em;
-/* when you do padding or margin in one line like this it goes top-right-bottom-left */
-display: flex;
-flex-wrap: wrap;
-position: absolute;
-/* "absolute" elements don't get pushed around by other elements on the screen. they are "removed from the document flow" */
-top: 0;
-width: 100%;
-z-index: 2;
-/* z-index makes an element stack in front of other things. by default elements further down the page render in front of everything before them */
+    padding: 2.5em 2em 1em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 h1 {
-font-size: 1em;
-font-weight: 600;
-flex: 1;
-/*this pushes the nav links to the right. flex is a whole system i'm not gonna get into here */
-white-space: nowrap;
-/* this prevents line breaks */
+    font-size: 1em;
+    font-weight: 600;
+    flex: 1;
+    white-space: nowrap;
 }
 
 nav a:not(:last-of-type) {
-margin-right: .5em;
-/* this puts space between the nav links, but not after the last one. css is a real code language! it has logic! */
+    margin-right: .5em;
 }
 
 a {
-/* "a" is for links for some 1990s reason */
-text-decoration: underline;
-text-decoration-color: transparent;
-transition: 0.2s;
-color: var(--links);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 0.2s;
+    color: var(--links);
 }
 
 nav a:hover {
-/* ":hover" makes something look different when you hover on it, which you probably guessed */
-text-decoration-color: var(--links);
-transition: 0.2s;
-/* here i'm using "transition," an easy way to animate things, along with making the default underline color transparent because you can't animate whether an underline is there but you can animate what color it is */
+    text-decoration-color: var(--links);
+    transition: 0.2s;
 }
+
+/* Uncomment to add anchors
 
 a.inert:hover{
-text-decoration-color: transparent;
+    text-decoration-color: transparent;
 }
-/* this "inert" class for links is just for the slashes in the nav menu. which could have been p's but i'd have to make those part of the flex container and i am lazy */
 
-/* sections -------------------------------------------- */
 section {
-background: var(--sectionbg);
-padding: 5em 2em 6em;
-/* the reason for padding instead of margin here is because anchor links automatically scroll to the top edge of the target. this way there's some margin between the top of the screen and the text. padding goes inside, margin goes outside */
-
-/* the next six lines are really important. but maybe see what happens if you change them anyway */
-display: none;
-top: 0;
-width: 100%;
+    background: var(--sectionbg);
+    padding: 5em 2em 6em;
+    display: none;
+    top: 0;
+    width: 100%;
 }
 
 section:target {
-display: block;
-/* :target is what makes the pages render one at a time. "block" is the default display mode */
+    display: block;
 }
 
 body:not(body:has(section:target)) section#home{
-display: block;
+    display: block;
 }
-/* this is a complicated conditional rule that makes the homepage display by default but go away when anything else is selected. this fixes a problem some people were having where longer pages would stick out from under the homepage. thanks to william davies for sending this in! */
+*/
 
 footer{
-color: var(--links);
-font-size: 85%;
-padding: .25em 0;
-border-top: 1px solid var(--links);
-/* yes, you can use variables in multi-value rules like this!*/
-margin: -5em 2.25em 2em;
-/* by using a negative top margin the footer will appear inside the section even though it's not. note the generous bottom padding on the sections */
-width: 75%;
+    color: var(--links);
+    font-size: 85%;
+    padding: .25em 0;
+    border-top: 1px solid var(--links);
+    margin: -5em 2.25em 2em;
+    width: 75%;
 }
 footer a{
-text-decoration: underline
+    text-decoration: underline
 }
-/* the footer doesn't have any target rules, so it just shows up and is always underneath whaatever section is visible. and you only need to write it out once! */
-
-/* text styles -------------------------------------------- */
 
 h2 {
-font-size: 2.5em;
-font-weight: 700;
-margin-bottom: .5em;
-letter-spacing: -0.03em;
-/* css will let you get very particular with your typography. which is not necessary at all but i appreciate, as a dork */
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: .5em;
+    letter-spacing: -0.03em;
 }
 
 h3 {
-font-size: 1.75em;
-margin-top: 0.75em;
-/* when you define a new font-size for something, the "em" unit becomes that size for everything related to that element */
-margin-bottom: .5em;
-letter-spacing: -0.03 em;
+    font-size: 1.75em;
+    margin-top: 0.75em;
+    margin-bottom: .5em;
+    letter-spacing: -0.03em;
 }
-/* there are 5 or 6 different h's (headings) and they can all be styled differently. it's a good idea to use them in descending order of importance */
 
 p {
-/* "p" is for paragraphs */
-font-size: 1em;
-letter-spacing: 0.02em;
-width: min(60ch, 90vw);
-/* ok im doing a few things here. "min" lets you list several values and the computer will use the smaller one, "ch" is a unit equal to one letter, so paragraphs will never be wider than 60 letters. a lot of web typesetting is too wide for comfortable reading. imo 60ch is about the maximum. a "vw" is a unit equal to 1 percent the "viewport width" (width of the screen or window). when 90% of the screen is smaller than 60 characters, paragraphs will start shrinking, to make sure they don't run off the screen. and you can say all of that in one little line!*/
-margin-bottom: 1em;
+    font-size: 1em;
+    letter-spacing: 0.02em;
+    width: min(60ch, 90vw);
+    /* 60ch is evidently a good standard for legibility */
+    margin-bottom: 1em;
 }
 
 p a{
-text-decoration-color: var(--links);
+    text-decoration-color: var(--links);
 }
-/* "p [space] a" applies to all links (a) inside paragraphs (p). this trick works with any pair of elements */
-
-/* keep in mind that because i already styled all "a"s up top, these rules will apply after and over those. the computer is just reading the document top-to-bottom and styling as it goes */
 
 span.mono {
-font-family: monospace;
-font-size: 0.9em;
-color: var(--mono);
-white-space: nowrap;
-background-color: var(--monobg);
-padding: 1px;
-border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: var(--mono);
+    white-space: nowrap;
+    background-color: var(--monobg);
+    padding: 1px;
+    border-radius: 4px;
 }
-/* a "span" lets you sort of highlight some text and make it look different without breaking the flow of text. the period tells the computer what class of span to apply this rule to */
 
 div.inline {
-width: 36em;
-max-width: 90vw;
-margin-bottom: 2em;
-margin-top: 2em;
+    width: 36em;
+    max-width: 90vw;
+    margin-bottom: 2em;
+    margin-top: 2em;
 }
-/* this gives embedded stuff about the same width + spacing as paragraphs when it's inside a div with the "inline" class. a div is just an all-purpose box for building and organizing with */
 
 .inline p{
-font-size: 0.8em;
-color: var(--links);
-font-style: italic;
+    font-size: 0.8em;
+    color: var(--links);
+    font-style: italic;
 }
-/* this makes text inside an "inline" div read as a caption. skipping an element type and just typing the .class will style any item with that class */
 
 img{
-width: 100%;
-height: auto;
+    width: 100%;
+    height: auto;
 }
-/* images like to kind of go wild if you don't tell them what size to be. the default is 1:1 pixel size i think? which is almost always too big */
 
-/* phone styling -------------------------------------------- */
+/* For the phone users in the crowd */
 @media only screen and (max-width: 680px) {
-html{
-width: 100vw;
-/* vw is a very handy unit that also, like most CSS, works great 99% of the time and then for 1 in 100 devices (iphones) breaks in an insane way that wrecks your site. ah well */
-overflow-x: hidden;
-/* this is a cheap trick to get rid of the horizontal scrollbar on narrow screens. of course this makes anything running off the page impossible to look at, so be careful*/
+    html{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+        width: 100vw;
+    }
+    header {
+        padding: 1em;
+        position: fixed;
+        background: var(--sectionbg);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
+    }
+    header h1{
+        display: none;
+    }
+    section{
+        padding: 6em 1em 5em 1em;
+    }
+    nav{
+        white-space: nowrap;
+        font-size: 0.8;
+    }
+    nav a:not(:last-of-type) {
+        margin-right: 0em;
+    }
+    footer{
+        margin: -4.5em 1em 2em;
+        width: 90vw;
+    }
 }
-body {
-font-size: 16px;
-line-height: 1.6;
-width: 100vw;
-}
-/* some people will tell you to design your website "mobile-first" and then make the wide version second. i disagree but i hate designing for phones */
-
-header {
-padding: 1em;
-position: fixed;
-background: var(--sectionbg);
-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
-}
-header h1{
-display: none;
-}
-section{
-padding: 6em 1em 5em 1em;
-}
-nav{
-white-space: nowrap;
-font-size: 0.8;
-}
-nav a:not(:last-of-type) {
-margin-right: 0em;
-}
-footer{
-margin: -4.5em 1em 2em;
-/* by using a negative top margin the footer will appear inside the section even though it's not. note the generous bottom padding on the sections */
-width: 90vw;
-}
-}
-/* media rules basically let you write a whole extra set of CSS styles that kick in based on something about the user's device (screen size, orientation, etc). they include stuff like high-contrast and screen-reader use cases, so use them whenever possible */
