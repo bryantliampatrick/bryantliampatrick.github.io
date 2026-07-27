@@ -89,6 +89,10 @@ a {
     transition: 0.4s;
 }
 
+.active, .accordion:hover {
+  background-color: var(--sectionbg);
+}
+
 .panel {
     padding: 0 1em;
     background-color: var(--sectionbg);
