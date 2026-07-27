@@ -90,7 +90,7 @@ a {
 }
 
 .active, .accordion:hover {
-  background-color: var(--sectionbg);
+  background-color: var(--monobg);
 }
 
 .panel {
