@@ -82,7 +82,7 @@ a {
     color: var(--textcolor);
     cursor: pointer;
     padding: 1em;
-    width: 80%;
+    width: min(60ch, 90vw);
     text-align: left;
     border: none;
     outline: none;
