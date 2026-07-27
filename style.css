@@ -166,10 +166,10 @@ p a{
 
 button, div {
     font-family: "Geomini", "Public Sans", sans-serif;
-    width: 100%
+    width: inherit;
 }
 
-div > p {
+button ~ div > p {
     width: inherit;
 }
 
