@@ -37,7 +37,6 @@ body {
     line-height: 1.4;
     color: var(--textcolor);
     position: relative;
-    margin-top: -1em;
     width: 43em;
 }
 
