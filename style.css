@@ -140,11 +140,6 @@ p a{
     text-decoration-color: var(--links);
 }
 
-button, div {
-    font-family: inherit;
-    width: inherit;
-}
-
 .accordion {
     background-color: var(--sectionbg);
     color: var(--textcolor);
@@ -169,7 +164,12 @@ button, div {
     overflow: hidden;
 }
 
-p.div {
+button, div {
+    font-family: "Geomini", "Public Sans", sans-serif;
+    width: 100%
+}
+
+div > p {
     width: inherit;
 }
 
