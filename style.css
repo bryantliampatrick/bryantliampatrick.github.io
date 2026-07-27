@@ -101,6 +101,10 @@ a {
     overflow: hidden;
 }
 
+p.panel {
+    width: inherit;
+}
+
 /* Uncomment to add anchors or nav
 
 nav a:hover {
