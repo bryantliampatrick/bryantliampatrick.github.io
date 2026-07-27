@@ -109,7 +109,6 @@ footer {
     color: var(--links);
     font-size: 85%;
     border-top: 1px solid var(--links);
-    margin: 5em 2.25em 2em;
     width: 75%;
     align-items: left;
 }
@@ -147,29 +146,6 @@ button, div {
 
 button ~ div > p {
     width: inherit;
-}
-
-span.mono {
-    font-family: monospace;
-    font-size: 0.9em;
-    color: var(--mono);
-    white-space: nowrap;
-    background-color: var(--monobg);
-    padding: 1px;
-    border-radius: 4px;
-}
-
-div.inline {
-    width: 36em;
-    max-width: 90vw;
-    margin-bottom: 2em;
-    margin-top: 2em;
-}
-
-.inline p{
-    font-size: 0.8em;
-    color: var(--links);
-    font-style: italic;
 }
 
 img {
