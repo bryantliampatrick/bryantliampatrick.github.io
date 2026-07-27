@@ -44,10 +44,11 @@ body {
     color: var(--textcolor);
     position: relative;
     width: 43em;
+    /* moving padding here because this is stylelight */
+    padding: 2.5em 2em 1em 2em;
 }
 
 header {
-    padding: 2.5em 2em 1em 2em;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
