@@ -97,6 +97,7 @@ a {
     padding: 0 1em;
     background-color: var(--sectionbg);
     display: none;
+    width: inherit;
     overflow: hidden;
 }
 
