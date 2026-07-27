@@ -77,34 +77,6 @@ a {
     color: var(--links);
 }
 
-.accordion {
-    background-color: var(--sectionbg);
-    color: var(--textcolor);
-    cursor: pointer;
-    padding: 1em;
-    width: min(60ch, 90vw);
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: var(--monobg);
-}
-
-.panel {
-    padding: 0 1em;
-    background-color: var(--sectionbg);
-    display: none;
-    width: inherit;
-    overflow: hidden;
-}
-
-p.panel {
-    width: inherit;
-}
-
 /* Uncomment to add anchors or nav
 
 nav a:hover {
@@ -166,6 +138,34 @@ p {
 
 p a{
     text-decoration-color: var(--links);
+}
+
+.accordion {
+    background-color: var(--sectionbg);
+    color: var(--textcolor);
+    cursor: pointer;
+    padding: 1em;
+    width: min(60ch, 90vw);
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: var(--monobg);
+}
+
+.panel {
+    padding: 0 1em;
+    background-color: var(--sectionbg);
+    display: none;
+    width: inherit;
+    overflow: hidden;
+}
+
+p.panel {
+    width: inherit;
 }
 
 span.mono {
