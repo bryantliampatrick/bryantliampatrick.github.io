@@ -51,6 +51,7 @@ body {
     line-height: 1.4;
     color: var(--textcolor);
     width: 43em;
+
     /* moving padding here because this is stylelight */
     padding: 2.5em 2em 1em 2em;
 }
@@ -64,7 +65,6 @@ footer {
 }
 
 main, footer {
-    display:
 }
 
 a {
