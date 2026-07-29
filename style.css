@@ -31,9 +31,8 @@
 }
 
 .container {
-    display: flex;
-    align-content: stretch;
-    flex-wrap: nowrap;
+    display: flex fill;
+    flex-wrap: wrap;
 }
 
 html {
@@ -201,15 +200,23 @@ https://freefrontend.com/css-paper-effects/#2026-02-06-hand-drawn-retro-radio-gr
 
 */
 #topbutton {
-    width: inherit;
-    background-color: var(--sectionbg);
-    border: 2px solid #222;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    max-width: fit-content !important;
-    width: fit-content;
     position: relative;
-    font-family: inherit;
+    display: inline-flex;
+    border-bottom: 1px dotted var(--links);
+    cursor: pointer;
+}
+
+.ttcontent {
+    visibility: hidden;
+    width: 4vw;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+#topbutton:hover .ttcontent {
+    visibility: visible;
 }
 
 /* For the phone users in the crowd */
