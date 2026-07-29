@@ -18,3 +18,16 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 } 
+
+// Courtesy of Adam Terlson
+// https://stackoverflow.com/questions/7064998/how-to-make-a-link-open-multiple-pages-when-clicked
+
+/* $('a.multi-link').click(
+  function(e) {
+    e.preventDefault();
+    // Links go here
+    window.open('https://web.archive.org/web/20260420005646/https://archiveswest.orbiscascade.org/ark:80444/xv791503');
+    window.open('https://web.archive.org/web/20260729174051/https://archiveswest.orbiscascade.org/ark:80444/xv708159');
+    window.open('https://web.archive.org/web/20260729174301/https://archiveswest.orbiscascade.org/ark:80444/xv506181');
+});
+*/

@@ -30,6 +30,12 @@
     }
 }
 
+.container {
+    display: flex;
+    align-content: stretch;
+    flex-wrap: nowrap;
+}
+
 html {
     background-color: var(--pagebg);
     scrollbar-gutter: stable;
@@ -44,10 +50,21 @@ body {
     
     line-height: 1.4;
     color: var(--textcolor);
-    position: center;
     width: 43em;
     /* moving padding here because this is stylelight */
     padding: 2.5em 2em 1em 2em;
+}
+
+footer {
+    color: var(--links);
+    font-size: 85%;
+    border-top: 1px solid var(--links);
+    width: 75%;
+    margin-top: 3em;
+}
+
+main, footer {
+    display:
 }
 
 a {
@@ -106,15 +123,6 @@ body:not(body:has(section:target)) section#home{
 }
 */
 
-footer {
-    color: var(--links);
-    font-size: 85%;
-    border-top: 1px solid var(--links);
-    width: 75%;
-    margin-top: 2.5em;
-    align-items: left;
-}
-
 h2 {
     font-size: 2.5em;
     font-weight: 700;
@@ -149,6 +157,7 @@ button, div {
 }
 
 img {
+    /* <img> default is a mess evidently */
     width: 100%;
     height: auto;
 }
@@ -170,15 +179,37 @@ img {
 }
 
 .panel {
-    padding: 0 1em;
+    padding: 1em;
     background-color: var(--sectionbg);
-    display: none;
-    width: inherit;
+    display: flex;
+    flex: 1;
+    width: min(60ch, 90vw);
     overflow: hidden;
 }
 
-button ~ div.panel p {
-    width: min(60ch, 90vw);
+/* Enforce <p>'s when nested in this funky way */
+button.accordion ~ div.panel p {
+    width: inherit;
+    font-size: 80%;
+    padding-right: 5%;
+}
+
+/* 
+
+Adapted from pharmacist-sabot on Uiverse.io
+https://freefrontend.com/css-paper-effects/#2026-02-06-hand-drawn-retro-radio-group-l
+
+*/
+#topbutton {
+    width: inherit;
+    background-color: var(--sectionbg);
+    border: 2px solid #222;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    max-width: fit-content !important;
+    width: fit-content;
+    position: relative;
+    font-family: inherit;
 }
 
 /* For the phone users in the crowd */
